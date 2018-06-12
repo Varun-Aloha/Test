@@ -1,9 +1,61 @@
 <!DOCTYPE html>
 <html>
-<body style="background-color:powderblue;">
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        #contents {
+            z-index: 1;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            min-height: 500px;
+            min-width: 850px;
+        }
+    
+        #btnCSMlogin {
+            position: relative;
+            top: 200px;
+            left: 40%;
+        }
+    
+        .btn-default:before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: text-top;
+            background-color: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    
+        .csm-button:before {
+            background-image: url('https://app.compliancesafetymanager.com/Images/CST_logo_icon.png');
+        }
+    </style>
+    <script type="text/javascript">
+        function openCSMLoginPage()
+        {
+            $("#iframeCSMLogin").attr("src", "https://beta.compliancesafetymgr.com/Login.aspx");
+            $("#iframeCSMLogin").show();
+            $("#btnCSMlogin").hide();
+        }
+    </script>
+</head>
 
+<body style="background-color: #F0F4FF;">
+    <div id="contents">
+        <button id="btnCSMlogin" type="button" class="btn btn-default csm-button" onclick="openCSMLoginPage();">
+            Click here to login to your Compliance Safety Manager Account
+        </button>
+        <iframe style="display:none; width: 100%; min-height: 1000px;" id="iframeCSMLogin"></iframe>
+    </div>
 </body>
+
 </html>
